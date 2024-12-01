@@ -2,7 +2,7 @@ package main
 
 import "testing"
 
-const INPUT string = ""
+const INPUT string = ``
 const EXPECT int = 0
 
 func Test(t *testing.T) {
