@@ -21,8 +21,8 @@ func partOne(input string) int {
 	listOne := []int{}
 	listTwo := []int{}
 
-	for _, line := range strings.Split(input, "\n") {
-		nums := strings.Split(line, "   ")
+	for _, line := range strings.Split(strings.TrimSpace(input), "\n") {
+		nums := strings.Fields(line)
 
 		firstNum, err := strconv.Atoi(nums[0])
 		if err != nil {
@@ -45,12 +45,10 @@ func partOne(input string) int {
 
 	for i := range listOne {
 		difference := listTwo[i] - listOne[i]
-
 		if difference < 0 {
-			totalDifference += -difference
-		} else {
-			totalDifference += difference
+			difference = -difference
 		}
+		totalDifference += difference
 	}
 
 	return totalDifference

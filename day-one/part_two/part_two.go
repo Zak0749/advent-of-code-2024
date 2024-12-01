@@ -21,7 +21,7 @@ func partTwo(input string) int {
 	frequency := map[int]int{}
 
 	for _, line := range strings.Split(input, "\n") {
-		nums := strings.Split(line, "   ")
+		nums := strings.Fields(line)
 
 		firstNum, err := strconv.Atoi(nums[0])
 		if err != nil {
